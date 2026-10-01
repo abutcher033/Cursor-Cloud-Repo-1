@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Local Fun — Recently Went</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">Local <span>Fun</span></div>
+      <div class="header-actions"><a href="auth.html">Account</a></div>
+    </header>
+    <main class="content">
+      <h1>Recently Went</h1>
+      <p class="sub">Places you tapped Go. Rate after you visit — reviews need a signed-in account.</p>
+
+      <article class="card">
+        <div class="pill-row"><span class="badge">Planned</span><span class="badge">Today</span></div>
+        <h2 class="place-title">Carroll County Farmers Market — Celebrating Fall</h2>
+        <p class="meta">Go saved · directions opened · rate after your visit</p>
+        <a class="secondary" href="detail.html" style="margin-top:8px">View detail</a>
+      </article>
+
+      <article class="card">
+        <div class="pill-row"><span class="badge">Been</span><span class="badge warn">Rate now</span></div>
+        <h2 class="place-title">Hashawha / Bear Branch</h2>
+        <p class="meta">Went · 3 days ago · Free · Outdoor + indoor discovery room</p>
+        <div class="stars-input" aria-label="Rate">☆ ☆ ☆ ☆ ☆</div>
+        <div class="field" style="margin-top:8px">
+          <label for="rev">Your review</label>
+          <input id="rev" type="text" placeholder="Short & helpful — hours, parking, kid fit…" />
+        </div>
+        <div class="btn-row">
+          <button class="primary" type="button">Post review</button>
+          <button class="secondary" type="button">Skip</button>
+        </div>
+        <p class="small" style="margin-top:8px">Visible to other Local Fun users · no anonymous reviews</p>
+      </article>
+
+      <article class="card">
+        <div class="pill-row"><span class="badge">Been</span><span class="badge">Reviewed</span></div>
+        <h2 class="place-title">Downtown Westminster Farmers Market</h2>
+        <div class="stars">Your ★★★★★</div>
+        <p class="desc">“Easy Sat morning · stroller-friendly lot · grab produce and go.”</p>
+      </article>
+    </main>
+    <nav class="nav">
+      <a href="index.html"><strong>⌂</strong>Home</a>
+      <a href="results.html"><strong>◎</strong>Explore</a>
+      <a class="active" href="recent.html"><strong>✓</strong>Went</a>
+      <a href="settings.html"><strong>⚙</strong>You</a>
+    </nav>
+  </div>
+</body>
+</html>

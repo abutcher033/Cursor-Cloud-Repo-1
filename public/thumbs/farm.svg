@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="400" viewBox="0 0 640 400">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#B87333"/>
+      <stop offset="100%" stop-color="#FBF7F0" stop-opacity="0.35"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="400" fill="url(#g)"/>
+  <circle cx="520" cy="80" r="90" fill="#FBF7F0" fill-opacity="0.15"/>
+  <circle cx="80" cy="340" r="120" fill="#FBF7F0" fill-opacity="0.12"/>
+  <text x="40" y="340" font-family="Segoe UI, system-ui, sans-serif" font-size="56" font-weight="700" fill="#FBF7F0">Farm</text>
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="220" viewBox="0 0 440 220" role="img" aria-labelledby="t">
+  <title id="t">Nothing in range illustration</title>
+  <rect width="440" height="220" rx="18" fill="#F7F1E5"/>
+  <path d="M0 150 C80 120 140 170 220 145 C300 120 360 155 440 130 L440 220 L0 220 Z" fill="#E6DCC8"/>
+  <path d="M40 150 L70 90 L100 150 Z" fill="#2E5A40"/>
+  <path d="M95 150 L130 70 L165 150 Z" fill="#1F3D2B"/>
+  <path d="M155 150 L185 100 L215 150 Z" fill="#2E5A40"/>
+  <circle cx="340" cy="58" r="22" fill="#B87333" fill-opacity="0.85"/>
+  <circle cx="250" cy="110" r="18" fill="#fff" stroke="#1F3D2B" stroke-width="4"/>
+  <line x1="263" y1="123" x2="290" y2="150" stroke="#1F3D2B" stroke-width="5" stroke-linecap="round"/>
+  <text x="24" y="42" font-family="Segoe UI, system-ui, sans-serif" font-size="18" font-weight="700" fill="#1F3D2B">Widen the map</text>
+</svg>
