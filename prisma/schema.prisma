@@ -1,0 +1,189 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String   @id @default(cuid())
+  email         String   @unique
+  passwordHash  String
+  displayName   String
+  homeLabel     String   @default("21048 · Finksburg, MD")
+  homeLat       Float    @default(39.4959)
+  homeLng       Float    @default(-76.8946)
+  defaultRadius Int      @default(25)
+  categories    String   @default("[]")
+  familyLens    Boolean  @default(false)
+  kidsAges      String   @default("[]")
+  onboardedAt   DateTime?
+  createdAt     DateTime @default(now())
+  reviews       Review[]
+  visits        Visit[]
+  saves         Save[]
+  reports       Report[]
+  reviewWrites  ReviewWrite[]
+  sent          Friendship[] @relation("sent")
+  received      Friendship[] @relation("received")
+  collections   Collection[]
+  shareLinks    ShareLink[]
+}
+
+model Friendship {
+  id          String   @id @default(cuid())
+  requesterId String
+  addresseeId String
+  status      String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  requester   User     @relation("sent", fields: [requesterId], references: [id])
+  addressee   User     @relation("received", fields: [addresseeId], references: [id])
+
+  @@unique([requesterId, addresseeId])
+}
+
+model Place {
+  id                String   @id
+  name              String
+  kind              String
+  categories        String
+  why               String
+  ageFit            String?
+  stroller          Boolean?
+  driveMin          Int?
+  costVibe          String
+  priceLevel        Int?
+  whenHours         String
+  startsAt          DateTime?
+  endsAt            DateTime?
+  address           String
+  lat               Float
+  lng               Float
+  link              String   @default("")
+  status            String
+  publicRating      Float?
+  publicReviewCount Int?
+  editorialRole     String?
+  weatherNote       String?
+  source            String   @default("seed")
+  externalIds       String   @default("{}")
+  patio             Boolean  @default(false)
+  indoorBackup      Boolean  @default(false)
+  sample            Boolean  @default(false)
+  imageUrl          String   @default("/thumbs/default.svg")
+  campusId          String?
+  gotchas           String   @default("[]")
+  phone             String?
+  visitMinutes      Int?
+  amenities         String   @default("{}")
+  reviews           Review[]
+  visits            Visit[]
+  saves             Save[]
+  collectionItems   CollectionItem[]
+}
+
+model Review {
+  id        String   @id @default(cuid())
+  userId    String
+  placeId   String
+  stars     Int
+  body      String   @default("")
+  tags      String   @default("[]")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  user      User     @relation(fields: [userId], references: [id])
+  place     Place    @relation(fields: [placeId], references: [id])
+
+  @@unique([userId, placeId])
+}
+
+model Visit {
+  id          String    @id @default(cuid())
+  userId      String
+  placeId     String
+  status      String
+  originLabel String
+  originLat   Float
+  originLng   Float
+  createdAt   DateTime  @default(now())
+  beenAt      DateTime?
+  user        User      @relation(fields: [userId], references: [id])
+  place       Place     @relation(fields: [placeId], references: [id])
+
+  @@unique([userId, placeId, status])
+}
+
+model Save {
+  id        String   @id @default(cuid())
+  userId    String
+  placeId   String
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id])
+  place     Place    @relation(fields: [placeId], references: [id])
+
+  @@unique([userId, placeId])
+}
+
+model Collection {
+  id        String           @id @default(cuid())
+  userId    String
+  slug      String
+  name      String
+  createdAt DateTime         @default(now())
+  user      User             @relation(fields: [userId], references: [id])
+  items     CollectionItem[]
+
+  @@unique([userId, slug])
+}
+
+model CollectionItem {
+  id           String     @id @default(cuid())
+  collectionId String
+  placeId      String
+  createdAt    DateTime   @default(now())
+  collection   Collection @relation(fields: [collectionId], references: [id], onDelete: Cascade)
+  place        Place      @relation(fields: [placeId], references: [id])
+
+  @@unique([collectionId, placeId])
+}
+
+model ShareLink {
+  id        String   @id @default(cuid())
+  token     String   @unique
+  creatorId String
+  title     String
+  placeIds  String
+  createdAt DateTime @default(now())
+  expiresAt DateTime?
+  creator   User     @relation(fields: [creatorId], references: [id])
+}
+
+model Report {
+  id         String   @id @default(cuid())
+  userId     String?
+  targetType String
+  targetId   String
+  reason     String
+  createdAt  DateTime @default(now())
+  user       User?    @relation(fields: [userId], references: [id])
+}
+
+model ReviewWrite {
+  id        String   @id @default(cuid())
+  userId    String
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id])
+}
+
+model GeocodeCache {
+  key       String   @id
+  lat       Float
+  lng       Float
+  label     String
+  source    String
+  createdAt DateTime @default(now())
+}
+

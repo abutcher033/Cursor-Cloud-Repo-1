@@ -1,0 +1,10 @@
+node_modules
+.next
+prisma/dev.db
+prisma/dev.db-journal
+data/*.db
+data/*.db-journal
+.env
+.env.local
+.env*.local
+screens/*.png

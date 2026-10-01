@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Local Fun — Go</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand"><a href="detail.html" style="color:inherit;text-decoration:none">← Back</a></div>
+      <div class="header-actions"><a href="recent.html">Recently Went</a></div>
+    </header>
+    <main class="content">
+      <h1>You’re going</h1>
+      <p class="sub">We’ll open directions and add this to Recently Went so you can rate it later.</p>
+
+      <div class="sheet">
+        <div class="pill-row"><span class="badge pin">Go</span><span class="badge">Directions handoff</span></div>
+        <h2 class="place-title">Carroll County Farmers Market — Celebrating Fall</h2>
+        <p class="desc"><strong>From:</strong> 21048 · Finksburg, MD (your search origin)</p>
+        <p class="desc"><strong>To:</strong> Ag Center / Smith Ave, Westminster, MD 21157</p>
+        <p class="meta">~15–20 min typical · no turn-by-turn inside Local Fun (v1)</p>
+
+        <div class="note">Deep-link only — Apple Maps or Google Maps. No paid Directions API in v1.</div>
+
+        <a class="primary" href="https://maps.apple.com/?saddr=Finksburg,MD&daddr=706+Agricultural+Center+Dr,Westminster,MD" target="_blank" rel="noopener">Open in Apple Maps</a>
+        <div style="height:8px"></div>
+        <a class="secondary" href="https://www.google.com/maps/dir/?api=1&origin=Finksburg,MD&destination=706+Agricultural+Center+Dr,Westminster,MD" target="_blank" rel="noopener">Open in Google Maps</a>
+        <div style="height:8px"></div>
+        <a class="secondary" href="recent.html">Done — view Recently Went</a>
+      </div>
+
+      <div class="card" style="margin-top:14px">
+        <h2>After you go</h2>
+        <p class="desc">Local Fun will nudge you from Recently Went: “How was the market?” — leave stars + a short review for others.</p>
+      </div>
+    </main>
+    <nav class="nav">
+      <a href="index.html"><strong>⌂</strong>Home</a>
+      <a href="results.html"><strong>◎</strong>Explore</a>
+      <a class="active" href="recent.html"><strong>✓</strong>Went</a>
+      <a href="settings.html"><strong>⚙</strong>You</a>
+    </nav>
+  </div>
+</body>
+</html>

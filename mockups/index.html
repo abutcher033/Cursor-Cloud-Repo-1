@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Local Fun — Home</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">Local <span>Fun</span></div>
+      <div class="header-actions">
+        <a href="auth.html">Sign in</a>
+      </div>
+    </header>
+    <main class="content">
+      <h1>What’s fun near you?</h1>
+      <p class="sub">Events, food, parks, and local picks ranked for your zip — inspired by Local Life’s Finksburg orbit.</p>
+
+      <div class="card">
+        <label for="loc">Home / search location</label>
+        <input id="loc" type="text" value="21048 · Finksburg, MD" />
+        <p class="small" style="margin-top:6px">Zip or address. Used for ranking distance and directions.</p>
+      </div>
+
+      <div class="card">
+        <label>Categories <span class="small">(multi-select · default = mix)</span></label>
+        <div class="row">
+          <span class="chip on">Food & drink</span>
+          <span class="chip on">Family & kids</span>
+          <span class="chip on">Outdoor</span>
+          <span class="chip">Live music</span>
+          <span class="chip on">Festivals / markets</span>
+          <span class="chip">Nightlife</span>
+          <span class="chip on">Farms / PYO</span>
+          <span class="chip">Breweries</span>
+          <span class="chip on">Free & cheap</span>
+          <span class="chip">Indoor / libraries</span>
+          <span class="chip">Seasonal</span>
+          <span class="chip">Museums</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <label>Search range</label>
+        <div class="row">
+          <span class="chip">5 mi</span>
+          <span class="chip">10</span>
+          <span class="chip">15</span>
+          <span class="chip on">25</span>
+          <span class="chip">40</span>
+          <span class="chip">60</span>
+        </div>
+        <p class="small">Default ~25 mi covers Westminster, Owings Mills, Timonium from Finksburg.</p>
+      </div>
+
+      <div class="card">
+        <div class="toggle on">
+          <div>
+            <strong>Family lens</strong>
+            <div class="small">Local Life–style: age-fit, free/cheap, drive, indoor backups</div>
+          </div>
+          <div class="switch" aria-hidden="true"></div>
+        </div>
+      </div>
+
+      <a class="primary" href="results.html">Search ranked results</a>
+      <p class="small" style="text-align:center;margin-top:10px">Guest can browse · Sign in to Go, Save, or review</p>
+    </main>
+    <nav class="nav">
+      <a class="active" href="index.html"><strong>⌂</strong>Home</a>
+      <a href="results.html"><strong>◎</strong>Explore</a>
+      <a href="recent.html"><strong>✓</strong>Went</a>
+      <a href="settings.html"><strong>⚙</strong>You</a>
+    </nav>
+  </div>
+</body>
+</html>

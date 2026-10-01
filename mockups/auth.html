@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Local Fun — Sign in</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">Local <span>Fun</span></div>
+      <div class="header-actions"><a href="index.html">Skip for now</a></div>
+    </header>
+    <main class="content">
+      <h1>Sign in to Go &amp; review</h1>
+      <p class="sub">Guests can browse. Go, Save, Recently Went, and ratings need an account. <strong>No anonymous reviews.</strong></p>
+
+      <div class="card">
+        <div class="auth-tabs">
+          <a class="on" href="auth.html">Magic link</a>
+          <a href="auth.html">Password</a>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" type="email" placeholder="you@example.com" value="" />
+        </div>
+        <button class="primary" type="button">Email me a sign-in link</button>
+        <p class="small" style="margin-top:10px;text-align:center">Austin decides: magic link vs email+password (see DRAFT-SPEC §14)</p>
+      </div>
+
+      <div class="card">
+        <h2>Why an account?</h2>
+        <p class="desc">• Tap <strong>Go</strong> → directions + Recently Went<br/>
+        • Leave stars &amp; reviews others can trust<br/>
+        • Save defaults: home zip, radius, categories, Family lens<br/>
+        • Phase 2: optional friends who went</p>
+      </div>
+    </main>
+    <nav class="nav">
+      <a href="index.html"><strong>⌂</strong>Home</a>
+      <a href="results.html"><strong>◎</strong>Explore</a>
+      <a href="recent.html"><strong>✓</strong>Went</a>
+      <a class="active" href="settings.html"><strong>⚙</strong>You</a>
+    </nav>
+  </div>
+</body>
+</html>
